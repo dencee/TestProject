@@ -1,4 +1,4 @@
-//https://www.codewars.com/kata/the-wrong-way-cow
+//https://www.codewars.com/kata/the-wrong-way-cow sss
 
 package extras.the_wrong_way_cow;
 
