@@ -170,6 +170,6 @@ void draw() {
 }
 
 
-
+// lohkjbkjb
   //(you have to figure out what part of your code to change)
   //Use this method to play a ding when your dot crosses the finish line.
