@@ -33,15 +33,16 @@ def line_leader(s1, s2, s3):
     character_s1 = s1[space_s1 + 1]
     character_s2 = s2[space_s2 + 1]
     character_s3 = s3[space_s3 + 1]
-    print("Char 1" + character_s1)
-    print("Char 2" + character_s2)
-    print("Char 3" + character_s3)
     if (character_s1 < character_s2) and (character_s1 < character_s3):
         return s1
     if (character_s2 < character_s1) and (character_s2 < character_s3):
         return s2
     if (character_s3 < character_s1) and (character_s3 < character_s2):
         return s3
+    else:
+        print("error - no if statments ran")
+
+        #SOMETHING ABOUT "L STRIP / R STRIP" FUNCTION? <<-- note to self
 
 
 # Return the sum of all numerical digits in the String
@@ -56,24 +57,53 @@ def numeral_sum(s):
 
 # Return the number of times String substring appears in String s
 def substring_count(s, substring):
-    pass
+    return('\'o\' occurs ' + s.count(substring))
 
 
 # Return the number of words in Strings that end with String substring
 # You can assume there are no punctuation marks between words
 def words_ends_with_substring(s, substring):
-    pass
+    num_words = s.count(" ")
+    for i in range (num_words):
+        num_substring = s.count(substring) + num_substring
+    return num_substring
+
 
 
 # Given String s, return the number of characters between the first occurrence
 # of String substring and the final occurrence
 # You can assume that substring will appear at least twice
 def distance(s, substring):
-    pass
+    numOccurances = s.count(substring)
+    lengthOfSubstring = len(substring)
+    firstAppearance = s.find(substring)
+    if firstAppearance == 0:
+        firstAppearance = 1
+    lastAppearance = s.find(substring, (lengthOfSubstring * (numOccurances - 1)))
+    return (lastAppearance - (firstAppearance * lengthOfSubstring))
+
 
 
 # Return true if String s is a palindrome
 # palindromes are words or phrases are read the same forward as backward.
 # HINT: ignore/remove all punctuation and spaces in the String
 def palindrome(s):
-    pass
+    s = s.replace(' ', '')
+    s = s.replace('?', '')
+    s = s.replace('!', '')
+    s = s.replace('.', '')
+    s = s.replace(',', '')
+    s = s.replace('-', '')
+    s = s.replace('\'', '')
+    s = s.replace('(', '')
+    s = s.replace(')', '')
+    s = s.upper()
+    char1 = 0
+    char2 = len(s) - 1
+    for i in range(len(s) - 1):
+        if s[char1] == s[char2]:
+            char1 = char1 + 1
+            char2 = char2 - 1
+        else:
+            return False
+    return True
